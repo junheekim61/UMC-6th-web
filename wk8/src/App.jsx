@@ -24,8 +24,6 @@ export default function App() {
           <Route path="/nowplaying" element={<NowPlayingPage />}></Route>
           <Route path="/toprated" element={<TopRatedPage />}></Route>
           <Route path="/upcoming" element={<UpComingPage />}></Route>
-
-          {/* 여기서 MovieDetail을 띄우도록 정의해둠 */}
           <Route path="/movie/:id" element={<MovieDetail />} />
         </Routes>
       </div>

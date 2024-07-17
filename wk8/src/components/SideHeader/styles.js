@@ -10,7 +10,7 @@ export const Container = styled.div`
   z-index: 999;
   display: flex;
   flex-direction: column;
-  background-color: #ff000088;
+  /* background-color: #ff000088; */
 
   @media (min-width: 768px) {
     display: none;
@@ -26,6 +26,7 @@ export const LogoBox = styled(Link)`
   font-weight: 600;
   color: white;
   text-decoration: none;
+  background-color: #242755;
 
   img {
     width: 20px;
@@ -37,6 +38,9 @@ export const NavBar = styled.div`
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
+
+  height: 100%;
+  background-color: #242755;
 `;
 
 export const LoginBox = styled.div`

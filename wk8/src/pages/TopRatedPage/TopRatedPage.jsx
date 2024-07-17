@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import * as S from "./styles.js";
 import MovieList from "../../components/MovieList/MovieList.jsx";
+import LoadingSpinner from "../../components/LoadingSpinner/LoadingSpinner";
 
 const options = {
   method: "GET",
@@ -30,6 +31,8 @@ export default function TopRatedPage() {
   }, []);
 
   return (
-    <S.Container>{loading ? null : <MovieList data={movieData} />}</S.Container>
+    <S.Container>
+      {loading ? <LoadingSpinner /> : <MovieList data={movieData} />}
+    </S.Container>
   );
 }

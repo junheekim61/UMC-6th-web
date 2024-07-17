@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import * as S from "./styles.js";
 
 export default function SideHeader() {
@@ -14,10 +14,17 @@ export default function SideHeader() {
     menuOpen ? setMenuOpen(false) : setMenuOpen(true);
   };
 
+  useEffect(() => {
+    document.body.style.overflow = menuOpen ? "hidden" : "auto";
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [menuOpen]);
+
   return (
     <S.Container>
       <S.LogoBox>
-        <p  to="/">UMC Movie</p>
+        <p to="/">UMC Movie</p>
         <img
           src="https://img.icons8.com/?size=100&id=8113&format=png&color=FFFFFF"
           alt="menu"

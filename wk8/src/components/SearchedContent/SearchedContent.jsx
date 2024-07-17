@@ -1,6 +1,7 @@
 import * as S from "./styles.js";
 import { useState, useEffect } from "react";
 import MovieList from "../MovieList/MovieList.jsx";
+import LoadingSpinner from "../LoadingSpinner/LoadingSpinner.jsx";
 
 const options = {
   method: "GET",
@@ -47,7 +48,11 @@ export default function SearchedContent({ searchingText }) {
 
   return (
     <S.ContentBox>
-      {loading ? <p>로딩중...</p> : <MovieList data={movieData} />}
+      {loading ? (
+        <LoadingSpinner style={{ height: "60px" }} />
+      ) : (
+        <MovieList data={movieData} />
+      )}
     </S.ContentBox>
   );
 }
